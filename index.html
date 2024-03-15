@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Numeros aleatorios</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+
+<body>
+  <!-- <div class="wrapper">
+    <div class="static-txt">Metodos para generar numeros</div>
+    <ul class="dynamic-txts">
+      <li><span>Aleatorios</span></li>
+      <li><span>Pseudoaleatorios</span></li>
+      <li><span>Aleatorios</span></li>
+      <li><span>Pseudoaleatorios</span></li>
+    </ul>
+  </div> -->
+  <h1>Metodos para generar numeros pseudoaleatorios</h1>
+  <div class="header">
+    
+    <section id="forms" class="form">
+      <select id="methodSelect" class="seed_input">
+        <option>Seleccione un metodo</option>
+        <option>Cuadrados medios</option>
+        <option>Productos medios</option>
+        <option>Lineal</option>
+        <option>Multiplicativo</option>
+      </select>
+      <span class="custom-arrow"></span>
+      <div id="squareMethodForm" class="form">
+       <div class="input-group"> 
+          <div class="form-group">
+            <label for="seed">Semilla</label>
+            <input type="number" min="0" id="seed" class="seed_input">
+          </div>
+          <div class="form-group">
+            <label for="quantity2">Cantidad de nros</label>
+            <input type="number" min="0" id="quantity2" class="seed_input" >
+          </div>
+        </div>
+      </div>
+      <div id="multiMethodForm" class="form">
+        <div class="input-group" >
+          <div class="form-group">
+            <label for="seed1">Semilla 1</label>
+            <input type="number" min="0" id="seed1" class="seed_input" >
+          </div>
+          <div class="form-group">
+            <label for="seed2">Semilla 2</label>
+            <input type="number" min="0" id="seed2" class="seed_input"]>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="quantity1">Cantidad de nros</label>
+          <input type="number" min="0" id="quantity1" class="seed_input" >
+        </div>
+      </div>
+      <div id="aditiveMethodForm" class="form">
+        <div class="input-group">
+          <div class="form-group">
+            <label for="seedAditive">Semilla</label>
+            <input type="number" min="99" id="seedAditive" class="seed_input" >
+          </div>
+          <div class="form-group">
+            <label for="a">a</label>
+            <input type="number" min="0" id="a" class="seed_input" placeholder="4*k + 1">
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="form-group">
+            <label for="c">c</label>
+            <input type="number" min="0" id="c" class="seed_input" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="p">m</label>
+            <input type="number" min="0" id="p" class="seed_input" placeholder="2^g">
+          </div>
+        </div>
+      </div>
+      <div id="multiplicativeMethodForm" class="form">
+        <div class="input-group">
+          <div class="form-group">
+            <label for="seedMultiplicative">Semilla</label>
+            <input type="number" min="0" id="seedMutiplicative" class="seed_input" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="k">K</label>
+            <input type="number" min="0" id="k" class="seed_input">  
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="form-group">
+            <label for="p1">Periodo</label>
+            <input type="number" min="0" id="p1" class="seed_input" placeholder="p">
+          </div>
+         
+        </div>
+        <div class="input_group" id="nyan">
+          <div class="radio">
+            <span>Calculo de a</span>
+            <div class="input-group" id="aaa">
+              <div class="form-group">
+                <label for="a1">3+8k</label>
+                <input id="a1" type="radio" name="a_gen" value="1" checked >
+              </div>
+              <div class="form-group">
+                <label for="a2">5+8k</label>
+                <input id="a2" type="radio" name="a_gen"  value="2">
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="button">Generar</button>  
+      </section>
+      
+  </div>
+  <div id="table_container">
+    <table id="table">
+      <thead id="tableHead">
+
+      </thead>
+      <tbody id="tableBody">
+        <!-- <tr><td>1</td><td>(3123 * 3123) = 9753129</td><td>7531</td><td>0.7531</td></tr><tr><td>2</td><td>(7531 * 7531) = 56715961</td><td>7159</td><td>0.7159</td></tr><tr><td>3</td><td>(7159 * 7159) = 51251281</td><td>2512</td><td>0.2512</td></tr><tr><td>4</td><td>(2512 * 2512) = 6310144</td><td>3101</td><td>0.3101</td></tr><tr><td>5</td><td>(3101 * 3101) = 9616201</td><td>6162</td><td>0.6162</td></tr><tr><td>6</td><td>(6162 * 6162) = 37970244</td><td>9702</td><td>0.9702</td></tr><tr><td>7</td><td>(9702 * 9702) = 94128804</td><td>1288</td><td>0.1288</td></tr><tr><td>8</td><td>(1288 * 1288) = 1658944</td><td>6589</td><td>0.6589</td></tr><tr><td>9</td><td>(6589 * 6589) = 43414921</td><td>4149</td><td>0.4149</td></tr><tr><td>10</td><td>(4149 * 4149) = 17214201</td><td>2142</td><td>0.2142</td></tr><tr><td>11</td><td>(2142 * 2142) = 4588164</td><td>5881</td><td>0.5881</td></tr><tr><td>12</td><td>(5881 * 5881) = 34586161</td><td>5861</td><td>0.5861</td></tr><tr><td>13</td><td>(5861 * 5861) = 34351321</td><td>3513</td><td>0.3513</td></tr><tr><td>14</td><td>(3513 * 3513) = 12341169</td><td>3411</td><td>0.3411</td></tr><tr><td>15</td><td>(3411 * 3411) = 11634921</td><td>6349</td><td>0.6349</td></tr><tr><td>16</td><td>(6349 * 6349) = 40309801</td><td>3098</td><td>0.3098</td></tr><tr><td>17</td><td>(3098 * 3098) = 9597604</td><td>5976</td><td>0.5976</td></tr><tr><td>18</td><td>(5976 * 5976) = 35712576</td><td>7125</td><td>0.7125</td></tr><tr><td>19</td><td>(7125 * 7125) = 50765625</td><td>7656</td><td>0.7656</td></tr><tr><td>20</td><td>(7656 * 7656) = 58614336</td><td>6143</td><td>0.6143</td></tr><tr><td>21</td><td>(6143 * 6143) = 37736449</td><td>7364</td><td>0.7364</td></tr><tr><td>22</td><td>(7364 * 7364) = 54228496</td><td>2284</td><td>0.2284</td></tr><tr><td>23</td><td>(2284 * 2284) = 5216656</td><td>2166</td><td>0.2166</td></tr><tr><td>24</td><td>(2166 * 2166) = 4691556</td><td>6915</td><td>0.6915</td></tr><tr><td>25</td><td>(6915 * 6915) = 47817225</td><td>8172</td><td>0.8172</td></tr><tr><td>26</td><td>(8172 * 8172) = 66781584</td><td>7815</td><td>0.7815</td></tr><tr><td>27</td><td>(7815 * 7815) = 61074225</td><td>0742</td><td>0.0742</td></tr><tr><td>28</td><td>(742 * 742) = 550564</td><td>5056</td><td>0.5056</td></tr><tr><td>29</td><td>(5056 * 5056) = 25563136</td><td>5631</td><td>0.5631</td></tr><tr><td>30</td><td>(5631 * 5631) = 31708161</td><td>7081</td><td>0.7081</td></tr><tr><td>31</td><td>(7081 * 7081) = 50140561</td><td>1405</td><td>0.1405</td></tr><tr><td>32</td><td>(1405 * 1405) = 1974025</td><td>9740</td><td>0.9740</td></tr><tr><td>33</td><td>(9740 * 9740) = 94867600</td><td>8676</td><td>0.8676</td></tr><tr><td>34</td><td>(8676 * 8676) = 75272976</td><td>2729</td><td>0.2729</td></tr><tr><td>35</td><td>(2729 * 2729) = 7447441</td><td>4474</td><td>0.4474</td></tr><tr><td>36</td><td>(4474 * 4474) = 20016676</td><td>0166</td><td>0.0166</td></tr><tr><td>37</td><td>(166 * 166) = 27556</td><td>2755</td><td>0.2755</td></tr><tr><td>38</td><td>(2755 * 2755) = 7590025</td><td>5900</td><td>0.5900</td></tr><tr><td>39</td><td>(5900 * 5900) = 34810000</td><td>8100</td><td>0.8100</td></tr><tr><td>40</td><td>(8100 * 8100) = 65610000</td><td>6100</td><td>0.6100</td></tr><tr><td>41</td><td>(6100 * 6100) = 37210000</td><td>2100</td><td>0.2100</td></tr><tr><td>42</td><td>(2100 * 2100) = 4410000</td><td>4100</td><td>0.4100</td></tr><tr><td>43</td><td>(4100 * 4100) = 16810000</td><td>8100</td><td>0.8100</td></tr> -->
+      </tbody>
+    </table>
+  </div>
+</body>
+<footer>
+    <section class="obs" >
+        <p id="obs"></p>
+      </section>
+  <script src="a.js"></script>
+  <script src="methods.js"></script>
+</footer>
+
+</html>
