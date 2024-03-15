@@ -191,7 +191,7 @@ generateObservations = (randArray) => {
   console.log(method);
   if (method === "Lineal") {
     if (p !== 0 && Number.isNaN(p) === false) {
-      g = Math.log2(p) + 2;
+      g = Math.log2(p);
       observation = `g = ${g} <br>`;
     }
   }
